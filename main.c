@@ -1,22 +1,9 @@
-// #include "bitwise.h"
+#include "bitwise.h"
 
-// int	main()
+// int	main(int ac, char **av)
 // {
-// 	long long a = 2;
-// 	long long b = 1254;
-// 	long long t;
+// 	// long long a = 100;
 
-// 	// t = is_bigger_than(0, -7);
-// 	printf("%lld\n", b);
-// 	print_bits(b);
-// 	printf("\n");
-// 	t = copy(_abs(b));
-// 	print_bits(t);
-// 	printf("\n");
-
-// 	printf("%lld\n", t);
-
-// 	// printf("%lld\n", t);
-// 	// print_bits(t);
-// 	// printf("\n");
+// 	print_octa(atoi(av[1]));
+// 	print_hexa(atoi(av[1]));
 // }

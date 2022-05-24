@@ -18,8 +18,11 @@
 # include <stdlib.h>
 
 
-void			print_bits(long long u);
-// void			print_bits(unsigned char u);
+void			print_binary(long long u);
+void			print_hexa(long long u);
+void			print_octa(long long u);
+
+void			print_bits(unsigned char u);
 void			swap(long long *a, long long *b);
 long long		copy(long long a);
 unsigned char	reverse_bits(unsigned char c);
