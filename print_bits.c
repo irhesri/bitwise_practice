@@ -34,10 +34,10 @@ void	print_bits(long long u)
 	long long	v;
 	
 	i = sizeof(long long) * 8;
-	v = pow(2, i - 1);
+	v = power(2, i - 1);
 	while (i--)
 	{
-		b = ((u & v) != 0) + 48;
+		b = !is_equal((u & v), 0) + 48;
 		write(1, &b, 1);
 		u <<= 1;
 	}

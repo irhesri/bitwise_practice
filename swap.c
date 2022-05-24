@@ -12,7 +12,7 @@
 
 # include "bitwise.h"
 
-void	swap(int *a, int *b)
+void	swap(long long *a, long long *b)
 {
 	(*a) ^= (*b);
 	(*b) ^= (*a);
