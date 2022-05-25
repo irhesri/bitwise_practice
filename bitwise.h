@@ -34,6 +34,7 @@ long long		substruct(long long a, long long b);
 long long		multiply(long long a, long long b);
 long long		power(long long a, long long b);
 long long		division(long long a, long long b);
+long long		modulo(long long a, long long b);
 short			is_equal(long long a, long long b);
 short			is_bigger_than(long long a, long long b);
 short			is_bigger_than_or_equal(long long a, long long b);

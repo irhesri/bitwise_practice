@@ -86,6 +86,11 @@ long long	division(long long a, long long b)
 	short		sign;
 	int			shifts;
 
+	if (is_equal(b, 0))
+	{
+		write(2, "error: division by zero\n", 24);
+		exit (1);
+	}
 	sign = 1;
 	if ((is_negative(a) && !is_negative(b)) || (!is_negative(a) && is_negative(b)))
 		sign = -1;
@@ -103,7 +108,7 @@ long long	division(long long a, long long b)
 		result <<= 1;
 		if (is_bigger_than_or_equal(a, b))
 		{
-			a -= b;
+			a = substruct(a, b);
 			result |= 1;
 		}
 		b >>= 1;
@@ -114,6 +119,37 @@ long long	division(long long a, long long b)
 		result = add(result, 1);
 	}
 	return (result);
+}
+
+long long	modulo(long long a, long long b)
+{
+	int 	shifts;
+	int		i;
+	short	sign;
+
+	if (is_equal(b, 0))
+	{
+		write(2, "error: division by zero\n", 24);
+		exit (1);
+	}
+	sign = 1;
+	if ((is_negative(a) && !is_negative(b)) || (!is_negative(a) && is_negative(b)))
+		sign = -1;
+	a = _abs(a);
+	b = _abs(b);
+	shifts = 1;
+	while (is_bigger_than(a, b))
+	{
+		b <<= 1;
+		shifts++;		
+	}
+	while (shifts--)
+	{
+		if (is_smaller_than_or_equal(b, a))
+			a = substruct(a, b);
+		b >>= 1;
+	}
+	return (a);
 }
 
 short	is_equal(long long a, long long b)
@@ -158,7 +194,7 @@ short	is_smaller_than(long long a, long long b)
 
 short	is_smaller_than_or_equal(long long a, long long b)
 {
-	return (is_bigger_than(a, b) || is_equal(a, b));
+	return (!is_bigger_than(a, b) || is_equal(a, b));
 }
 
 short	is_negative(long long a)
