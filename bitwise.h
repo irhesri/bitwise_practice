@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bitwise.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irhesri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: irhesri <irhesri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:51:07 by irhesri           #+#    #+#             */
-/*   Updated: 2022/05/24 17:51:10 by irhesri          ###   ########.fr       */
+/*   Updated: 2022/07/26 19:44:10 by irhesri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+
+//	size of long long
+# define SIZE_OF_LONG_LONG 64
 
 
 void			print_binary(long long u);
@@ -27,7 +30,7 @@ void			swap(long long *a, long long *b);
 long long		copy(long long a);
 unsigned char	reverse_bits(unsigned char c);
 
-//	MATHS
+//	MATHS 
 long long		_abs(long long a);
 long long		add(long long a, long long b);
 long long		substruct(long long a, long long b);

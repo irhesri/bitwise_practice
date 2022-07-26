@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maths.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irhesri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: irhesri <irhesri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:51:31 by irhesri           #+#    #+#             */
-/*   Updated: 2022/05/24 17:51:33 by irhesri          ###   ########.fr       */
+/*   Updated: 2022/07/26 19:59:42 by irhesri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ long long	multiply(long long a, long long b)
 	int			i;
 
 	result = 0;
-	i = sizeof(long long) * 8;
+	i = SIZE_OF_LONG_LONG;
 	while (i-- && b)
 	{
 		if (b & 1)
@@ -166,14 +166,14 @@ short	is_bigger_than(long long a, long long b)
 
 	if (!(a ^ b))
 		return (0);
-	v = power(2, sizeof(long long) * 8 - 1);
+	v = power(2, SIZE_OF_LONG_LONG - 1);
 	if ((is_negative(a) && !is_negative(b)) || (!is_negative(a) && is_negative(b)))
 	{
 		a = _abs(a);
 		b = _abs(b);
 		swap(&a, &b);
 	}
-	i = sizeof(long long) * 8;
+	i = SIZE_OF_LONG_LONG;
 	while (i-- && is_equal((a & v), (b & v)))
 	{
 		a <<= 1;
@@ -189,19 +189,19 @@ short	is_bigger_than_or_equal(long long a, long long b)
 
 short	is_smaller_than(long long a, long long b)
 {
-	return (!is_bigger_than(a, b));
+	return (!is_bigger_than_or_equal(a, b));
 }
 
 short	is_smaller_than_or_equal(long long a, long long b)
 {
-	return (!is_bigger_than(a, b) || is_equal(a, b));
+	return (!is_bigger_than(a, b));
 }
 
 short	is_negative(long long a)
 {
 	long long	v;
 
-	v = power(2, sizeof(long long) * 8 - 1);
+	v = power(2, SIZE_OF_LONG_LONG - 1);
 	if (a & v)
 		return (1);
 	return (0);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irhesri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: irhesri <irhesri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:31:51 by irhesri           #+#    #+#             */
-/*   Updated: 2022/05/22 18:31:54 by irhesri          ###   ########.fr       */
+/*   Updated: 2022/07/26 19:44:05 by irhesri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	print_binary(long long u)
 	int			b;
 	long long	v;
 	
-	i = sizeof(long long) * 8;
+	i = SIZE_OF_LONG_LONG;
 	v = power(2, i - 1);
 	while (i--)
 	{
@@ -51,7 +51,7 @@ void	print_hexa(long long u)
 	short		result;
 	long long	v;
 	
-	i = sizeof(long long) * 8;
+	i = SIZE_OF_LONG_LONG;
 	v = power(2, i - 1);
 	if (is_negative(u))
 		write(1, "-", 1);		
@@ -94,7 +94,7 @@ void	print_octa(long long u)
 	short		result;
 	long long	v;
 	
-	i = sizeof(long long) * 8;
+	i = SIZE_OF_LONG_LONG;
 	v = power(2, i - 1);
 	if (is_negative(u))
 		write(1, "-", 1);		

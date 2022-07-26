@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   copy.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: irhesri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: irhesri <irhesri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:51:21 by irhesri           #+#    #+#             */
-/*   Updated: 2022/05/24 17:51:24 by irhesri          ###   ########.fr       */
+/*   Updated: 2022/07/26 19:44:05 by irhesri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ long long	copy(long long a)
 	int			i;
 
 	cp = 0;
-	i = sizeof(long long) * 8;
+	i = SIZE_OF_LONG_LONG;
 	v = power(2, i - 1);
 	while (i--)
 	{
